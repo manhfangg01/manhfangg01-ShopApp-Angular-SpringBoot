@@ -133,6 +133,42 @@
   width: 404px;
   background-color: var(--white-color);
   border: solid 1px #d3d3d3;
+  cursor: default; /*Cái gì bấm vào được thì mới có cursor:pointer*/
+  display: none;
+  transform-origin: top right;
+  animation: headerNotificationGrowth ease-in 0.25s;
+}
+.header__notification::before {
+  content: "";
+  border-width: 20px 30px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  top: -35px;
+  right: 25px;
+}
+.header__notification::after {
+  content: "";
+  width: 140px;
+  height: 30px;
+  position: absolute;
+  display: block;
+  top: -20px;
+  right: 0;
+}
+
+@keyframes headerNotificationGrowth {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.header__navbar-item-has-notification:hover .header__notification {
+  display: block;
 }
 
 .header__notification-header {
@@ -147,6 +183,8 @@
   font-size: 1.4rem;
   line-height: 40px;
   margin-left: 15px;
+  cursor: text; /*Cái gì mà bôi đen được thì cursor:text*/
+  user-select: none; /*Không cho người dùng bôi đen*/
 }
 .header__notification-list {
   padding-left: 0;
@@ -195,9 +233,18 @@
   line-height: 1.2; /* Giảm khoảng cách dòng */
 }
 .header__notification-footer {
-  text-align: center;
+  display: flex;
 }
 .header__notification-footer-btn {
   text-decoration: none;
   color: var(--text-color);
+  padding: 8px 100px;
+  margin: auto;
+  font-weight: 400;
+}
+
+.header__notification-triangular {
+  position: absolute;
+  border: 20px solid var(--white-color);
+  border-color: transparent transparent var(--white-color) transparent;
 }
