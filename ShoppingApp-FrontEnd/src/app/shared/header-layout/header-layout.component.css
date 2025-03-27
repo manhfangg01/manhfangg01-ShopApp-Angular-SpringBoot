@@ -123,3 +123,81 @@
   top: -19px;
   right: 0;
 }
+
+/* --Header notification-- */
+
+.header__notification {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 404px;
+  background-color: var(--white-color);
+  border: solid 1px #d3d3d3;
+}
+
+.header__notification-header {
+  height: 40px;
+  background-color: var(--white-color);
+}
+
+.header__notification-header h3 {
+  color: #999;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 40px;
+  margin-left: 15px;
+}
+.header__notification-list {
+  padding-left: 0;
+}
+.header__notification-item {
+  display: flex;
+}
+.header__notification-item:hover,
+.header__notification-footer:hover {
+  cursor: pointer;
+  background-color: #f7ebeb;
+}
+.header__notification-item--viewed {
+  background-color: rgba(238, 77, 45, 0.05);
+}
+.header__notification-link {
+  width: 100%;
+  display: flex;
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+}
+.header__notification-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+.header__notification-info {
+  margin-left: 5px;
+  line-height: 1.2; /* Giảm khoảng cách giữa 2 dòng */
+  margin-top: 5px; /* Đẩy phần thông tin xuống thấp hơn */
+}
+
+.header__notification-name {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2px; /* Giảm khoảng cách xuống dòng */
+}
+
+.header__notification-description {
+  font-size: 1.2rem;
+  color: #999;
+  line-height: 1.2; /* Giảm khoảng cách dòng */
+}
+.header__notification-footer {
+  text-align: center;
+}
+.header__notification-footer-btn {
+  text-decoration: none;
+  color: var(--text-color);
+}
