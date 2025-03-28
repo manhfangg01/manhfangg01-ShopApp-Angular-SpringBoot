@@ -134,9 +134,10 @@
   background-color: var(--white-color);
   border: solid 1px #d3d3d3;
   cursor: default; /*Cái gì bấm vào được thì mới có cursor:pointer*/
-  display: none;
   transform-origin: top right;
   animation: headerNotificationGrowth ease-in 0.25s;
+  will-change: opacity, transform;
+  display: none;
 }
 .header__notification::before {
   content: "";
@@ -247,4 +248,90 @@
   position: absolute;
   border: 20px solid var(--white-color);
   border-color: transparent transparent var(--white-color) transparent;
+}
+
+/*Authen modal*/
+.auth-form {
+  width: 500px;
+  height: 555px;
+}
+.auth-form__container {
+  padding: 0 32px;
+}
+.auth-form__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.auth-form__heading {
+  margin-top: 10px;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.auth-form__switch-btn {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.auth-form__form {
+  margin: 16px;
+}
+
+.auth-form__input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 16px;
+  padding: 0 12px;
+  font-size: 1.4rem;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  outline: none;
+}
+
+.auth-form__input:focus {
+  border-color: #888;
+  overflow: hidden;
+}
+.auth-form__aside {
+  margin-top: 20px;
+}
+.auth-form__policy-text {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  line-height: 1.8rem;
+  text-align: center;
+}
+.auth-form__text-link {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.auth-form__controls {
+  margin-top: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+.auth-form__socials {
+  margin-top: 15px;
+  background-color: #f5f5f5;
+  padding: 12px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.auth-form__socials-icon {
+  font-size: 1.8rem;
+}
+.auth-form__socials--facebook {
+  background-color: #3a5a98;
+  color: var(--white-color);
+}
+.auth-form__socials-lable {
+  margin: 0 13px;
+}
+.auth-form__socials--google {
+  background-color: var(--white-color);
+  color: var(--black-color);
 }
