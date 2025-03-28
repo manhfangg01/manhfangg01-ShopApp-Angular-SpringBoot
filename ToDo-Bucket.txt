@@ -1,0 +1,1 @@
+// Làm hàm chuyển đổi "Đăng nhập" -> "Đăng kí" và ngược lại 

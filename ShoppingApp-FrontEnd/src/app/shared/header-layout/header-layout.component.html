@@ -181,17 +181,19 @@
       <footer class="footer"></footer>
     </div>
 
+    <!-- Modal-->
     <div>
-      <!-- Modal-->
       <div class="modal">
         <div class="modal__overlay"></div>
         <div class="modal__body">
-          <!-- Form login/register -->
-          <div class="auth-form">
+          <!-- Register Form -->
+          <div class="auth-form" *ngIf="isRegistering">
             <div class="auth-form__container">
               <div class="auth-form__header">
                 <h3 class="auth-form__heading">Đăng kí</h3>
-                <span class="auth-form__switch-btn">Đăng nhập</span>
+                <span class="auth-form__switch-btn" (click)="toggleForm()"
+                  >Đăng nhập</span
+                >
               </div>
               <div class="auth-form__form">
                 <div class="auth-form__group">
@@ -226,7 +228,7 @@
                 <button class="btn btn-normal" style="margin-right: 8px">
                   TRỞ LẠI
                 </button>
-                <button class="btn btn--primary">Đăng kí</button>
+                <button class="btn btn--primary" s>Đăng kí</button>
               </div>
             </div>
             <div class="auth-form__socials">
@@ -252,9 +254,77 @@
               </a>
             </div>
           </div>
+
+          <!-- Login Form-->
+          <div class="auth-form" *ngIf="!isRegistering">
+            <div class="auth-form__container">
+              <div class="auth-form__header">
+                <h3 class="auth-form__heading">Đăng nhập</h3>
+                <span class="auth-form__switch-btn" (click)="toggleForm()"
+                  >Đăng kí</span
+                >
+              </div>
+              <div class="auth-form__form">
+                <div class="auth-form__group">
+                  <input
+                    type="text"
+                    class="auth-form__input"
+                    placeholder="Nhập email của bạn "
+                  />
+                  <input
+                    type="password"
+                    class="auth-form__input"
+                    placeholder="Nhập mật khẩu của bạn "
+                  />
+                </div>
+              </div>
+              <div class="auth-form__help">
+                <a
+                  href=""
+                  class="auth-form__help-option auth-form__help-option--primary"
+                  >Quên Mật Khẩu</a
+                >
+                <a href="" class="auth-form__help-option">Cần trợ giúp?</a>
+              </div>
+              <div class="auth-form__controls">
+                <button class="btn btn-normal" style="margin-right: 8px">
+                  TRỞ LẠI
+                </button>
+                <button class="btn btn--primary">Đăng nhập</button>
+              </div>
+            </div>
+            <div class="auth-form__socials">
+              <a
+                href=""
+                class="btn btn--with-icon auth-form__socials--sms"
+                style="font-size: 1rem"
+              >
+                <i class="fa-sharp fa-solid fa-comment-sms"></i>
+                <span class="auth-form__socials-lable">SMS</span>
+              </a>
+              <a
+                href=""
+                class="btn btn--with-icon auth-form__socials--facebook"
+                style="font-size: 1rem"
+              >
+                <i
+                  class="auth-form__socials-icon fa-brands fa-square-facebook"
+                ></i>
+                <span class="auth-form__socials-lable">Facebook</span>
+              </a>
+              <a
+                href=""
+                class="btn btn--size-s btn--with-icon auth-form__socials--google"
+                style="font-size: 1rem"
+              >
+                <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                <span class="auth-form__socials-lable"> Google</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- Modal-->
     </div>
+    <!-- Modal-->
   </body>
 </html>
