@@ -76,7 +76,7 @@ html {
 .modal__body {
   background-color: var(--white-color);
   margin: auto;
-  z-index: 2;
+  z-index: 1;
   border-radius: 5px;
   animation: emerge ease-in 0.3s;
 }

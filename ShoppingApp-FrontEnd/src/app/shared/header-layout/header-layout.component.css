@@ -139,6 +139,7 @@
   animation: headerNotificationGrowth ease-in 0.25s;
   will-change: opacity, transform;
   display: none;
+  z-index: 1;
 }
 .header__notification::before {
   content: "";
@@ -156,7 +157,7 @@
   position: absolute;
   display: block;
   top: -20px;
-  right: 0;
+  right: -5px;
 }
 
 @keyframes headerNotificationGrowth {
@@ -176,6 +177,7 @@
 .header__notification-header {
   height: 40px;
   background-color: var(--white-color);
+  display: block;
 }
 
 .header__notification-header h3 {
@@ -384,18 +386,10 @@
 .header__logo {
   width: 200px;
   padding-left: 4px;
+  padding-bottom: 10px;
 }
 .header__logo-img {
   width: 150px;
-}
-.header__cart {
-  width: 150px;
-  text-align: center;
-}
-
-.header__cart-icon {
-  font-size: 30px;
-  color: var(--white-color);
 }
 .header__search {
   flex: 1;
@@ -553,4 +547,67 @@
   text-decoration: none;
   /* line-height: ; */
   font-size: 1.2rem;
+}
+
+/* Cart-layout*/
+
+.header__cart {
+  width: 150px;
+  text-align: center;
+}
+.header__cart-wrap {
+  display: inline-block;
+  position: relative;
+}
+.header__cart-icon {
+  font-size: 30px;
+  color: var(--white-color);
+}
+.header__cart-wrap:hover .header__cart-list {
+  display: inline-block;
+}
+
+.header__cart-list {
+  width: 500px;
+  height: 300px;
+  background-color: var(--white-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 150%;
+  right: -100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  display: none;
+}
+
+.header__cart-list::before {
+  content: "";
+  border-width: 20px 26px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  top: -35px;
+  right: 22px;
+}
+.header__cart-list::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 25px;
+  /* background-color: rgb(38, 0, 255); */
+  position: absolute;
+  top: -6%;
+  right: 23px;
+}
+.header__empty-cart-img {
+  width: 50%;
+}
+.header__empty-cart-text {
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+.header__cart-list--empty {
+  cursor: default;
 }
